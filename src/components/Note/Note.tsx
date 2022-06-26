@@ -15,7 +15,7 @@ const Note: FC<Props> = ({ note, onNoteUpdate, onNoteDelete }) => {
     const noteTextUpdated = (event: FocusEvent<HTMLDivElement, Element>) => {
 
         setIsFocused(false);
-        const newTextValue = event.currentTarget.textContent;
+        const newTextValue = event.currentTarget.outerText;
 
         // Check is newTextValue is different from the original or not
         if (newTextValue === note.text) {
@@ -56,7 +56,7 @@ const Note: FC<Props> = ({ note, onNoteUpdate, onNoteDelete }) => {
                 className="btn-close"
                 aria-label="Close">
             </button>
-            <div
+            <p
                 onBlur={noteTextUpdated}
                 onFocus={() => {
                     setIsFocused(true);
@@ -66,7 +66,7 @@ const Note: FC<Props> = ({ note, onNoteUpdate, onNoteDelete }) => {
                 className="note__text"
             >
                 {note.text}
-            </div>
+            </p>
             <div className="note__link">
                 <a href={note.link}>{note.link}</a>
             </div>

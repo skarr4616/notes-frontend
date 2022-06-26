@@ -1,4 +1,5 @@
 .note {
+    white-space: pre-line;
     background: #feff9c;
     text-decoration: none;
     color: rgb(0, 0, 0);
